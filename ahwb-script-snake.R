@@ -52,19 +52,8 @@ dat$recruit <- as.factor(dat$recruit)
 dat$recruitable_id <- as.factor(dat$recruitable_id)
 
 #-------------------------------------------------
-# 2) GLMMs Analyses 
+# 2) GLMMs Analysis 
 #-------------------------------------------------
-
-######################################
-## recruitable individuals on AH-WB ##
-######################################
-
-recruitableglmm<- glmer(combination ~ recruitable_id  + (1|cdt) + (1|ID), data= dat, family = binomial(link = "logit"))
-
-Anova(recruitableglmm, type= "III")
-summary(recruitableglmm) 
-
-simulateResiduals(recruitableglmm, plot = T)
 
 ####################################
 ## Number of individuals recuited ##
